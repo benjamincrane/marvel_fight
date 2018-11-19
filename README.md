@@ -16,3 +16,7 @@ Some assumptions I made that turned out to be wrong:
 3) All available characters would have descriptions.
 4) Users would always correctly spell names.
 5) Users would always input the correct data type.
+6) It would be possible for me to suppress the Hashie enumerable warning.
+
+Some assumptions that (so far) have turned out to be right:
+1) No word in any character description will be long enough to overcome a 1000 point advantage given by an auto-win word.
