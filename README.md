@@ -20,3 +20,4 @@ Some assumptions I made that turned out to be wrong:
 
 Some assumptions that (so far) have turned out to be right:
 1) No word in any character description will be long enough to overcome a 1000 point advantage given by an auto-win word.
+2) In the case of both characters having an equal length word or both having gamma or radioactive in their descriptions, neither should win.
