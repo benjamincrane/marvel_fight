@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem "faraday"
-gem "faraday_middleware"
-gem "json"
-gem "time"
-gem "digest/md5"
+ruby ">=2.5"
+gem 'faraday', '>= 0.7', '< 0.10'
+gem 'faraday_middleware', '>= 0.8', '< 0.10'
+gem 'hashie', '>= 0.4.0'
