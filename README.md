@@ -1,11 +1,11 @@
 **The Marvel_Fight App**
 
-Installation and Use
-0) You will need Ruby 2.5.3 in order to run this.
-1) Clone this repository.
-2) In the command line, type `ruby marvel_fight.rb` and hit Enter.
-3) Obey the prompts.
-4) Don't worry if you make mistakes entering your choices.
+<h4>Installation and Use</h4>
+<ul><li>0) You will need Ruby 2.5.3 in order to run this.</li>
+<li>1) Clone this repository.</li>
+<li>2) In the command line, type `ruby marvel_fight.rb` and hit Enter.</li>
+<li>3) Obey the prompts.</li>
+<li>4) Don't worry if you make mistakes entering your choices.</li></ul>
 
 Development
 Initially I planned to write the API calls myself, but while trying to write that part I came across a Stack Overflow question about exactly my problem with the API and a link to an existing Ruby gem (https://github.com/O-I/marvel). Rather than try to reinvent the wheel, I opted to copy that gem's functionality and integrate it with some basic control flow steps.
