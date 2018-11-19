@@ -2,7 +2,8 @@ require_relative 'marvel_api'
 
 puts "Welcome to the Marvel Combat Arena! Your definitive source to the only question that matters in the Marvel universe. Who would win in a fight?"
 puts "Let's begin. Enter the name of the first combatant."
-marvel1 = gets.chomp# api call
+marvel1 = gets.chomp
+# first API call - rescue in case the name is misspelled or description is empty
 begin
 api_response = Marvel.characters(name: "#{marvel1}")
 puts api_response[0]['name']
@@ -17,7 +18,10 @@ puts "That combatant has refused your call, but in their place stands Thor."
 end
 puts "You have chosen #{api_response[0]['name']} as the first combatant."
 puts "What is the name of the second combatant?"
-marvel2 = gets.chomp# api call
+marvel2 = gets.chomp
+# second API call - rescue in case the name is misspelled or description is empty
+# I would use a function but I wanted to have different substitute characters 
+# available in case the user made mistakes on both entries
 begin
 api_response2 = Marvel.characters(name: "#{marvel2}")
 puts api_response2[0]['name']
@@ -44,9 +48,17 @@ seed = 1
 end
 puts "SEED location #{seed} chosen."
 def fight(first_name, first_desc, second_name, second_desc, position)
+# An edge case of ties was left undefined in the documentation, so I decided the best
+# outcome in the case of a tie was no winner, including if both had the special
+# auto-win words in their description.
+# Speaking of the special words, that's why I pass in the whole description string instead
+# of the 1-9th words.
 winner = "Neither"
+# I opted for points based on word length to simplify the logic for the reader.
 first_points = 0
 second_points = 0
+# Special words result in a 1000 point advantage since that's well above what any English 
+# word length could possibly hit.
 if first_desc.match(/gamma/) or first_desc.match(/radioactive/)
 first_points += 1000
 end
